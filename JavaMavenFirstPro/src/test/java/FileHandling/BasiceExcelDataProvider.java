@@ -3,7 +3,7 @@ package FileHandling;
 public class BasiceExcelDataProvider {
 	public static void main(String[]args)
 	{
-		String excelpath="E:\\POMJAVA\\JavaMavenFirstPro\\Excel File\\age_validation.xlsx";
+		String excelpath="E:\\POMJAVA\\JavaMavenFirstPro\\Excel\\age_validation.xlsx";
 		testData(excelpath,"sheet1");
 		
 	}
@@ -15,7 +15,7 @@ public class BasiceExcelDataProvider {
 		ExcelUtilDataProvider excel = new ExcelUtilDataProvider(excelPath,sheetname);
 		int rowcount = excel.getRowCount();
 		int colcount = excel.getColCount();
-			//Object data[][]= new Object [rowcount-1][colcount];
+	Object data[][]= new Object [rowcount-1][colcount];
 		for(int i=1;i<=rowcount;i++)
 		{
 			

@@ -1,4 +1,7 @@
 package FileHandling;
+import java.io.File;
+import java.io.FileInputStream;
+
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ExcelUtilDataProvider {
@@ -9,15 +12,22 @@ public class ExcelUtilDataProvider {
 	//...call function to get cell data...//
 	
 		
-		
+	static String Projectpath;
 		static XSSFWorkbook workbook;
 		static XSSFSheet sheet;
 		public ExcelUtilDataProvider(String excelPath,String sheetname)
 		{
 			try {
+				String ProjectPath = System.getProperty("user.dir");
+				//File Src = new File(ProjectPath+"\\Excel\\age_validation.xlsx");
+				workbook = new XSSFWorkbook(ProjectPath+"\\Excel\\age_validation.xlsx");
 				
-			 workbook = new XSSFWorkbook(excelPath);
-			 sheet=workbook.getSheet(sheetname);
+				
+			 
+			 
+			 sheet=workbook.getSheet("sheet1");
+			 
+
 				//workbook.getSheet(sheetname);
 			}catch(Exception e)
 			{

@@ -13,8 +13,8 @@ public class ExcelDataProvider {
 	@DataProvider(name="test1data")
 	
  public  Object[][] getdata() {
-		String excelpath="E:\\POMJAVA\\JavaMavenFirstPro\\Excel File\\age_validation.xlsx";
-		Object data[][]= testData(excelpath,"sheet1");
+		String excelpath="E:\\POMJAVA\\JavaMavenFirstPro\\Excel\\age_validation.xlsx";
+		Object data[][]= testData(excelpath,"Sheet1");
 	 return data;
  }
 	public  Object[][] testData(String excelPath, String sheetname)

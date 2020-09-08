@@ -16,9 +16,8 @@ public class TwoFunction {
 	{
 		try
 		{
-		
-			System.getProperty("user.dir");
-			File Src = new File("E:\\POMJAVA\\JavaMavenFirstPro\\Excel File\\age_validation.xlsx");
+			String ProjectPath = System.getProperty("user.dir");
+			File Src = new File(ProjectPath+"\\Excel\\age_validation.xlsx");
 			FileInputStream fis = new FileInputStream(Src);
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	
@@ -42,8 +41,8 @@ public class TwoFunction {
 	
 		try
 		{
-			System.getProperty("user.dir");
-			File Src = new File("E:\\POMJAVA\\JavaMavenFirstPro\\Excel File\\age_validation.xlsx");
+			String ProjectPath = System.getProperty("user.dir");
+			File Src = new File(ProjectPath+"\\Excel\\age_validation.xlsx");
 			FileInputStream fis = new FileInputStream(Src);
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	

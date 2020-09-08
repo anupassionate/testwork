@@ -2,6 +2,9 @@ package FileHandling;
 
 
 
+import java.io.File;
+import java.io.FileInputStream;
+
 //import java.io.FileInputStream;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -11,16 +14,20 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 //...call function to get cell data...//
 public class ExcelUtils {
 	
-	static String Projectpath;
+	//static String Projectpath;
 	static XSSFWorkbook workbook;
 	static XSSFSheet sheet;
+	//...create constructor...//
 	public ExcelUtils(String excelPath,String sheetname)
 	{
 		try {
+			String ProjectPath = System.getProperty("user.dir");
+			File Src = new File(excelPath);
+			FileInputStream fis = new FileInputStream(Src);
+			XSSFWorkbook workbook = new XSSFWorkbook(fis);
+			XSSFSheet sheet = workbook.getSheet("sheetname");
 			
-		 workbook = new XSSFWorkbook(excelPath);
-		 sheet=workbook.getSheet(sheetname);
-			//workbook.getSheet(sheetname);
+			
 		}catch(Exception e)
 		{
 			e.printStackTrace();
@@ -30,22 +37,39 @@ public class ExcelUtils {
 	}
 	public static void main(String[]args)
 	{ 
-		getRowCount();
+		//getRowCount();
 		getcelldataString(0,0);
 		getCellDataNumber(1,1);
 	}
 	
 	public static void getRowCount()
-	//public static int getRowCount()
+	
 	{
-	//XSSFWorkbook workbook = new XSSFWorkbook();
-		//int rowcount = 0;
+	
 		try
 		{
-			
 	int rowcount = sheet.getPhysicalNumberOfRows();
-			//rowcount = sheet.getPhysicalNumberOfRows();
-	System.out.println("num of row :"+ rowcount);
+	
+	System.out.println("num of row :"+rowcount);
+	
+	
+		}catch(Exception exp)
+		{
+			System.out.println(exp.getMessage());
+			System.out.println(exp.getCause());
+			exp.printStackTrace();
+		}
+		//return rowcount;
+	}
+public static void getcolCount()
+	
+	{
+	
+		try
+		{
+	int colcount = sheet.getRow(0).getPhysicalNumberOfCells();
+	
+	System.out.println("num of col :"+ colcount);
 	
 	
 		}catch(Exception exp)
@@ -57,13 +81,13 @@ public class ExcelUtils {
 		//return rowcount;
 	}
 	public static void getcelldataString(int rownum,int colnum)
-	//public static String getCellDataString(int rownum,int colnum)
+	
 	{
-	//String CellData = null;
+	
 		try {
 			
 	String celldata = sheet.getRow(rownum).getCell(colnum).getStringCellValue();
-		 //CellData = sheet.getRow(rownum).getCell(colnum).getStringCellValue();
+		 
 	System.out.println(celldata);
 		}
 		catch(Exception exp)

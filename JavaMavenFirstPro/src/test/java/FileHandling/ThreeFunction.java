@@ -7,6 +7,11 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ThreeFunction {
+	static String Projectpath;
+	static XSSFWorkbook workbook;
+	static XSSFSheet sheet;
+
+
 	public static void main(String[]args)
 	{ 
 		//getRowCount();
@@ -22,8 +27,9 @@ public class ThreeFunction {
 	//XSSFWorkbook workbook = new XSSFWorkbook();
 		try
 		{
-			String Projectpath = System.getProperty("user.dir");
-			File Src = new File("E:\\POMJAVA\\JavaMavenFirstPro\\Excel File\\age_validation.xlsx");
+			String ProjectPath = System.getProperty("user.dir");
+			File Src = new File(ProjectPath+"\\Excel\\age_validation.xlsx");
+			
 			FileInputStream fis = new FileInputStream(Src);
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	
@@ -48,8 +54,9 @@ public static void getRowCount()
 		//int rowcount = 0;
 		try
 		{
-			String Projectpath = System.getProperty("user.dir");
-			File Src = new File("E:\\POMJAVA\\JavaMavenFirstPro\\Excel File\\age_validation.xlsx");
+			String ProjectPath = System.getProperty("user.dir");
+			File Src = new File(ProjectPath+"\\Excel\\age_validation.xlsx");
+			
 			FileInputStream fis = new FileInputStream(Src);
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	
@@ -72,8 +79,8 @@ public static void getRowCount()
 	{
 	//String CellData = null;
 		try {
-			String Projectpath = System.getProperty("user.dir");
-			File Src = new File("E:\\POMJAVA\\JavaMavenFirstPro\\Excel File\\age_validation.xlsx");
+			String ProjectPath = System.getProperty("user.dir");
+			File Src = new File(ProjectPath+"\\Excel\\age_validation.xlsx");
 			FileInputStream fis = new FileInputStream(Src);
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	
@@ -93,8 +100,9 @@ public static void getRowCount()
 	public static void getCellDataNumber()
 	{
 		try {
-			String Projectpath = System.getProperty("user.dir");
-			File Src = new File("E:\\POMJAVA\\JavaMavenFirstPro\\Excel File\\age_validation.xlsx");
+			String ProjectPath = System.getProperty("user.dir");
+			File Src = new File(ProjectPath+"\\Excel\\age_validation.xlsx");
+			
 			FileInputStream fis = new FileInputStream(Src);
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	

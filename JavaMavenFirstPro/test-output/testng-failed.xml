@@ -3,11 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Wait.FluentWait">
+      <class name="FileHandling.DataDrivenFunction">
         <methods>
-          <include name="guru99tutorials"/>
+          <include name="test1"/>
+          <include name="setupTest"/>
         </methods>
-      </class> <!-- Wait.FluentWait -->
+      </class> <!-- FileHandling.DataDrivenFunction -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
